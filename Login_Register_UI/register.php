@@ -1,3 +1,4 @@
+<?php include('Php/functions.php') ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -5,23 +6,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>FURCO</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body style="background: url(&quot;assets/img/pawsfull.svg&quot;) left / contain no-repeat, rgb(234,192,162);">
-    <nav class="navbar navbar-expand-md py-3" style="background: rgb(255,197,158);border-right: 0px hidden rgba(255,255,255,0) ;">
-        <div class="container-fluid"><a class="navbar-brand d-flex align-items-center"><img src="assets/img/logo.svg"><span style="font-family: Ubuntu, sans-serif;font-weight: bold;font-size: 24px;">FURCO</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-center" id="navcol-2">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item d-flex justify-content-center align-items-center"><input class="form-control-lg" type="search" name="Search" value="Search" style="border-radius: 22px;border: 2px solid rgb(0,0,0);font-family: Poppins, sans-serif;"></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 24px;font-family: Poppins, sans-serif;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="font-family: Poppins, sans-serif;font-size: 24px;color: rgb(0,0,0);">Products</a></li>
-                </ul><a class="btn btn-primary d-flex justify-content-center align-items-center ms-md-2" role="button" href="login.html" style="background: #ff8e3c;font-family: Roboto, sans-serif;width: 114px;height: 43px;border-color: rgba(255,255,255,0);border-radius: 22px;box-shadow: 0px 5px 10px 0px rgb(0,0,0);">Sign In</a>
-            </div>
+<body style="background: url('Image/pawsfull.svg') left / contain no-repeat, rgb(234,192,162);">
+<nav class="navbar navbar-expand py-3" style="background: rgb(255,197,158);">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="Image/logo.svg">
+            <span style="font-family: Ubuntu, sans-serif; font-weight: bold; font-size: 24px; color: rgb(0,0,0);">FURCO</span>
+        </a>
+        <input class="form-control-lg" type="search" name="Search" placeholder="Search" style="border-radius: 22px; border: 2px solid rgb(0,0,0); font-family: Poppins, sans-serif; margin-right: auto;">
+        <div class="d-flex align-items-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="Home.php" style="font-size: 24px; font-family: Poppins, sans-serif; color: rgb(0,0,0);">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Product.php" style="font-size: 24px; font-family: Poppins, sans-serif; color: rgb(0,0,0);">Products</a></li>
+            </ul>
+            <a class="btn btn-primary" role="button" href="login.php" style="background: #ff8e3c; font-family: Roboto, sans-serif; width: 114px; height: 43px; border-color: #ff8e3c; border-radius: 22px; box-shadow: 0 5px 10px rgb(0,0,0); font-weight:bold;">Sign In</a>
         </div>
-    </nav>
+    </div>
+</nav>
     <section class="d-flex justify-content-center align-items-center position-relative py-4 py-xl-5">
         <div class="container d-flex justify-content-center align-items-center">
             <div class="card d-flex justify-content-center align-items-center mb-5" style="width: 637px;height: 607px;border-radius: 19px;background: #ffffff00;">
@@ -30,12 +36,13 @@
                         <h2 style="font-family: Poppins, sans-serif;">Register</h2>
                     </div>
                     <p class="w-lg-50" style="font-family: Poppins, sans-serif;font-size: 13px;"><br>Create new account today to reap the benefits of a personalized shopping experience.<br><br></p>
-                    <form class="text-center" method="post">
-                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="Full Name *" readonly="" style="font-weight: bold;font-family: Poppins, sans-serif;font-size: 14px;"><input class="form-control" type="text" name="full name" placeholder="" style="width: 598px;border-radius: 22px;height: 42px;font-family: Poppins, sans-serif;"></div>
-                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="Email Address *" readonly="" style="font-weight: bold;font-family: Poppins, sans-serif;font-size: 14px;"><input class="form-control" type="email" name="email" placeholder="" style="width: 598px;border-radius: 22px;height: 42px;font-family: Poppins, sans-serif;"></div>
+                    <form class="text-center" method="post" action="register.php">
+                    <?php echo display_error(); ?>
+                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="<?php echo $username; ?>Username*" readonly="" style="font-weight: bold;font-family: Poppins, sans-serif;font-size: 14px;"><input class="form-control" type="text" name="full name" placeholder="" style="width: 598px;border-radius: 22px;height: 42px;font-family: Poppins, sans-serif;"></div>
+                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="<?php echo $email; ?>Email*" readonly="" style="font-weight: bold;font-family: Poppins, sans-serif;font-size: 14px;"><input class="form-control" type="email" name="email" placeholder="" style="width: 598px;border-radius: 22px;height: 42px;font-family: Poppins, sans-serif;"></div>
                         <div class="mb-3"><input class="form-control-plaintext" type="text" value="Password *" readonly="" style="font-size: 14px;font-family: Poppins, sans-serif;font-weight: bold;"><input class="form-control" type="password" name="password" placeholder="" style="height: 42px;border-radius: 22px;font-family: Poppins, sans-serif;"></div>
-                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="Phone Number *" readonly="" style="font-size: 14px;font-family: Poppins, sans-serif;font-weight: bold;"><input class="form-control" type="text" name="phone number" placeholder="" style="height: 42px;border-radius: 22px;font-family: Poppins, sans-serif;"></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="height: 44px;background: #ff8e3c;font-family: Poppins, sans-serif;font-size: 14px;border-radius: 22px;border-color: #ffffff00;color: rgb(0,0,0);font-weight: bold;">Register</button></div>
+                        <div class="mb-3"><input class="form-control-plaintext" type="text" value="<?php echo $phonenumber;?>Phone Number*" readonly="" style="font-size: 14px;font-family: Poppins, sans-serif;font-weight: bold;"><input class="form-control" type="text" name="phone number" placeholder="" style="height: 42px;border-radius: 22px;font-family: Poppins, sans-serif;"></div>
+                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: #ff8e3c; font-family: Poppins, sans-serif; border-color: #ff8e3c; border-radius: 22px; color: black; font-weight: bold;">Register</button></div>
                     </form>
                 </div>
             </div>
@@ -62,9 +69,9 @@
                     <h3 class="text-uppercase" style="color: rgb(255,255,255);">OPEN HOURS</h3>
                     <p style="color: rgb(255,255,255);">8am - 8pm<br> Monday-Saturday<br><br> For inquiries during holidays, please contact us! </p>
                 </div>
-                <div class="col-md-3 d-flex justify-content-start align-items-center">
-                    <h3 class="text-uppercase"></h3><br>
-                    <div class="d-grid footer-links"><a href="#" style="color: rgb(255,255,255);">Home</a><a href="#" style="color: rgb(255,255,255);">Subscriptions</a><a href="#" style="color: rgb(255,255,255);">Products</a><a href="#" style="color: rgb(255,255,255);">My Orders</a></div>
+                <div class="col-md-3">
+                <h3 class="text-uppercase" style="color: rgb(255,255,255);">QUICK LINKS</h3>
+                    <div class="d-grid footer-links"><a href="#" style="color: rgb(255,255,255);">Home</a><br><a href="#" style="color: rgb(255,255,255);">Subscriptions</a><br><a href="#" style="color: rgb(255,255,255);">Products</a><br><a href="#" style="color: rgb(255,255,255);">My Orders</a></div>
                 </div>
             </div>
             <hr>
@@ -78,5 +85,5 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
+

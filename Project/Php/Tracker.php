@@ -1,20 +1,21 @@
-// This code would typically be placed in a separate file (e.g., "fetch_order_data.php") 
-// and included using PHP's "include" or "require" functions.
 <?php
-// Connect to your database
-$conn = mysqli_connect("your_hostname", "your_username", "your_password", "your_database");
+include 'functions.php';
+$conn = db_connect();
 
-// Retrieve order details based on a specific order ID (e.g., from a query string or session variable)
-$order_id = $_GET['order_id']; // Example of getting order ID from query string
-$sql = "SELECT * FROM orders WHERE order_id = $order_id";
-$result = mysqli_query($conn, $sql);
-$order_data = mysqli_fetch_assoc($result);
+$order_id = isset($_GET['order_id']) ? intval($_GET['order_id']) : 0;
+$sql = "SELECT * FROM orders WHERE order_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $order_id);
+$stmt->execute();
+$order_data = $stmt->get_result()->fetch_assoc();
 
-// Retrieve order activity log for the given order ID
-$sql_activity = "SELECT * FROM order_activity WHERE order_id = $order_id";
-$result_activity = mysqli_query($conn, $sql_activity);
-$order_activity_data = mysqli_fetch_all($result_activity, MYSQLI_ASSOC);
+$sql_activity = "SELECT * FROM order_activity WHERE order_id = ?";
+$stmt_activity = $conn->prepare($sql_activity);
+$stmt_activity->bind_param("i", $order_id);
+$stmt_activity->execute();
+$order_activity_data = $stmt_activity->get_result()->fetch_all(MYSQLI_ASSOC);
 
-// Close the database connection
-mysqli_close($conn);
+$stmt->close();
+$stmt_activity->close();
+$conn->close();
 ?>

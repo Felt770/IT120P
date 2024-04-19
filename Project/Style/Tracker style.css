@@ -1,171 +1,236 @@
-/* Basic styles */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EAC0A2;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  flex-grow: 0; /* Prevent logo from stretching full width */
-}
-
-.logo img {
-  height: 50px; /* Adjust logo height as needed */
-}
-/* Style the navigation bar */
 .navbar {
-  width: 100%;
-  background-color: #555;
-  overflow: auto;
-}
-
-/* Navbar links */
-.navbar a {
-  float: left;
-  text-align: center;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Navbar links on mouse-over */
-.navbar a:hover {
-  background-color: #000;
-}
-
-/* Current/active navbar link */
-.active {
-  background-color: #04AA6D;
-}
-.search-bar {
-  display: flex; /* Allow elements to sit side-by-side */
-  width: 19%; /* Make the bar full width */
-  position: relative; /* Enable positioning for icon */
-  align-items: center;
-  flex-direction: column;
-}
-
-  .search-bar input[type="text"] {
-    padding: 10px 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    flex-grow: 1; /* Allow search bar to expand */
-  }
-  
-  .search-bar .search-btn {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    height: 50px;
-    width: 50px;
-    background: transparent;
-    color: black;
-    line-height: 50px;  
-    font-size: 20px; 
-    text-align: center;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-  }
-}
-
-main {
-  padding-top: 40px;
-  padding-bottom: 50px;
-}
-
-.container2 {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.order-details {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.order-details p {
-  margin-bottom: 5px;
-}
-
-.progress-bar {
   display: flex;
+  align-items: center;
+  background-color: #FFC59E;
+  padding: 20px; 
   justify-content: space-between;
-  margin-top: 20px;
 }
 
-.progress-step {
-  text-align: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-  color: #333;
+.navbar .cart, .navbar .profile {
+  width: 70px;
+  height: auto; 
+  margin-right: 20px;
 }
 
-.progress-step.active {
-  font-weight: bold;
-  border-bottom-color: #000;
+.navbar button {
+  background: none;
+  border: none;
+  outline: none;
 }
 
-.progress-step.delivered {
-  color: green;
+.navbar button img {
+  width: 70px;
+  height: auto; 
 }
 
-.order-activity {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
+.navbar .search-container {
+  position: relative;
+  flex-grow: 0.6;
+  margin-left: 30px;
 }
 
-.order-activity h3 {
-  margin-bottom: 15px;
+.navbar .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px; 
+  width: auto;
 }
 
-.order-activity ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.navbar input[type="search"] {
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 12px 20px;
+  padding-left: 40px;
+  outline: none;
+  width: 100%;
+  margin-right: 20px;
+  font-size: 16px;
 }
 
-.order-activity li {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.order-activity span.activity-status {
+.navbar a {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
   padding: 5px 10px;
-  border-radius: 4px;
+  border: none;
+  background: none;
+  font-size: 22px;
+}
+
+@media(max-width:768px){
+  .card{
+      width: 90%;
+  }
+}
+
+.title{
+  color: rgb(252, 103, 49);
+  font-weight: 600;
+  margin-bottom: 2vh;
+  padding: 0 8%;
+  font-size: initial;
+}
+#details{
+  font-weight: 400;
+}
+.info{
+  padding: 5% 8%;
+}
+.info .col-5{
+  padding: 0;
+}
+#heading{
+  color: grey;
+  line-height: 6vh;
+}
+.pricing{
+  background-color: #ddd3;
+  padding: 2vh 8%;
+  font-weight: 400;
+  line-height: 2.5;
+}
+.pricing .col-3{
+  padding: 0;
+}
+.total{
+  padding: 2vh 8%;
+  color: rgb(252, 103, 49);
+  font-weight: bold;
+}
+.total .col-3{
+  padding: 0;
+}
+
+#progressbar {
+  margin-bottom: 3vh;
+  overflow: hidden;
+  color: rgb(252, 103, 49);
+  padding-left: 0px;
+  margin-top: 3vh
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: x-small;
+  width: 25%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+  color: rgb(160, 159, 159);
+}
+
+#progressbar #step1:before {
+  content: "";
+  color: rgb(252, 103, 49);
+  width: 5px;
+  height: 5px;
+  margin-left: 0px !important;
+  /* padding-left: 11px !important */
+}
+
+#progressbar #step2:before {
+  content: "";
   color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-left: 32%;
 }
 
-.order-activity span.activity-status.delivered {
-  background-color: green;
+#progressbar #step3:before {
+  content: "";
+  color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-right: 32% ; 
+  /* padding-right: 11px !important */
 }
 
-.order-activity span.activity-status.on-the-road {
-  background-color: orange;
+#progressbar #step4:before {
+  content: "";
+  color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-right: 0px !important;
+  /* padding-right: 11px !important */
 }
 
-.order-activity span.activity-date {
-  color: #ccc;
+#progressbar li:before {
+  line-height: 29px;
+  display: block;
   font-size: 12px;
-  margin-left: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: auto;
+  z-index: -1;
+  margin-bottom: 1vh;
 }
 
-/* Footer styles */
+#progressbar li:after {
+  content: '';
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  margin-bottom: 2vh;
+  top: 1px;
+  z-index: 1;
+}
+.progress-track{
+  padding: 0 8%;
+}
+#progressbar li:nth-child(2):after {
+  margin-right: auto;
+}
+
+#progressbar li:nth-child(1):after {
+  margin: auto;
+}
+
+#progressbar li:nth-child(3):after {
+  float: left;
+  width: 68%;
+}
+#progressbar li:nth-child(4):after {
+  margin-left: auto;
+  width: 132%;
+}
+
+#progressbar  li.active{
+  color: black;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: rgb(252, 103, 49);
+}
 
 footer {
-  background-color: #f1f1f1;
-  padding: 10px 0;
+  background-color: #9E6B2F;
+  padding: 30px 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
+}
+footer, footer p, footer a {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+.footer-links a {
+  margin-bottom: 5px;
 }

@@ -5,9 +5,19 @@ The application aims to enhance the sales potential and marketing reach of pet r
 
 Installation
 
-Intall the latest XAMPP version and composer  
-Intsall this in your vscode terminal - composer require adyen/php-api-library  after you open the application folder
+Install Visual Studio code
+Install the latest XAMPP version
 
 Usage
 
-To use the application you need to have a adyen test account after you create the account change the client key,api key and merchant name of the code to your  client key,api key and merchant name. 
+Step 1: Download the Folder Furco.zip 
+
+Step 2: Extract the Furco.zip into your htdocs.
+
+Step 3: Open The Furco Folder with VSCode.
+
+Step 4: Open your Xampp and start the apache and mysql. 
+
+Step 5: Go to your browser and type localhost
+
+Step 6: Under the localhost you should see the Furco folder click that folder and it will automatically run the application. 

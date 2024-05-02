@@ -6,6 +6,7 @@ The application aims to enhance the sales potential and marketing reach of pet r
 Installation
 
 Install Visual Studio code
+
 Install the latest XAMPP version
 
 Usage

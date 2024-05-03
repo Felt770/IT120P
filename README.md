@@ -19,6 +19,10 @@ Step 3: Open The Furco Folder with VSCode.
 
 Step 4: Open your Xampp and start the apache and mysql. 
 
-Step 5: Go to your browser and type localhost
+Step 5: click the admin in mysql in xampp which should redirect you to myphpadmin.
 
-Step 6: Under the localhost you should see the Furco folder click that folder and it will automatically run the application. 
+Step 6: create a database name furco after that import the furco.sql in the furco folder.
+
+Step 7: in your browser search for localhost  
+
+Step 8: Under the localhost you should see the Furco folder click that folder and it will automatically run the application. 

@@ -26,3 +26,5 @@ Step 6: create a database name furco after that import the furco.sql in the furc
 Step 7: in your browser search for localhost  
 
 Step 8: Under the localhost you should see the Furco folder click that folder and it will automatically run the application. 
+
+if you want to login as admin the passworld is admin123 and email is admin@gmail.com
